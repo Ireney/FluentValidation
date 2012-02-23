@@ -12,3 +12,11 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 
 For documentation, binary releases, discussions and the issue tracker please visit the CodePlex site:
 http://fluentvalidation.codeplex.com
+
+
+Ireney's fork includes the following changes:
+
+- targets .NET 3.5
+- implements new IValidationResult interface to ease mocks
+
+This also excludes MVC3 and Tests projects from the solution. To be addressed at a later time.

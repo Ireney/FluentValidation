@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FluentValidation.Tests</RootNamespace>
     <AssemblyName>FluentValidation.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\FluentValidation.snk</AssemblyOriginatorKeyFile>
@@ -85,10 +85,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FluentValidation.Mvc3\FluentValidation.Mvc3.csproj">
-      <Project>{A2D31732-F255-4F05-8412-3C8C29B65755}</Project>
-      <Name>FluentValidation.Mvc3</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FluentValidation\FluentValidation.csproj">
       <Project>{DAE0249B-4F69-4AC9-9A17-AA23E0795316}</Project>
       <Name>FluentValidation</Name>

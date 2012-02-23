@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FluentValidation</RootNamespace>
     <AssemblyName>FluentValidation</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\FluentValidation.snk</AssemblyOriginatorKeyFile>
@@ -45,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -99,6 +100,7 @@
     <Compile Include="Resources\IResourceAccessorBuilder.cs" />
     <Compile Include="Resources\LocalizedStringSource.cs" />
     <Compile Include="Resources\StaticStringSource.cs" />
+    <Compile Include="Results\IValidationResult.cs" />
     <Compile Include="ValidationContext.cs" />
     <Compile Include="Internal\IValidatorSelector.cs" />
     <Compile Include="Resources\Messages.Designer.cs">

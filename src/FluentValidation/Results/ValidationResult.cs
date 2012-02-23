@@ -24,7 +24,7 @@ namespace FluentValidation.Results {
 #if !SILVERLIGHT
 	[Serializable]
 #endif
-	public class ValidationResult {
+	public class ValidationResult : IValidationResult {
 		private readonly List<ValidationFailure> errors = new List<ValidationFailure>();
 
 		public bool IsValid {

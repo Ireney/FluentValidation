@@ -493,7 +493,7 @@ namespace FluentValidation {
 		/// <param name="instance">The object to validate</param>
 		/// <param name="propertyExpressions">Expressions to specify the properties to validate</param>
 		/// <returns>A ValidationResult object containing any validation failures</returns>
-		public static ValidationResult Validate<T>(this IValidator<T> validator, T instance, params Expression<Func<T, object>>[] propertyExpressions) {
+		public static IValidationResult Validate<T>(this IValidator<T> validator, T instance, params Expression<Func<T, object>>[] propertyExpressions) {
 			var context = new ValidationContext<T>(instance, new PropertyChain(), MemberNameValidatorSelector.FromExpressions(propertyExpressions));
 			return validator.Validate(context);
 		}
@@ -504,12 +504,12 @@ namespace FluentValidation {
 		/// <param name="instance">The object to validate</param>
 		/// <param name="properties">The names of the properties to validate.</param>
 		/// <returns>A ValidationResult object containing any validation failures.</returns>
-		public static ValidationResult Validate<T>(this IValidator<T> validator, T instance, params string[] properties) {
+		public static IValidationResult Validate<T>(this IValidator<T> validator, T instance, params string[] properties) {
 			var context = new ValidationContext<T>(instance, new PropertyChain(), new MemberNameValidatorSelector(properties));
 			return validator.Validate(context);
 		}
 
-		public static ValidationResult Validate<T>(this IValidator<T> validator, T instance, IValidatorSelector selector = null, string ruleSet = null) {
+		public static IValidationResult Validate<T>(this IValidator<T> validator, T instance, IValidatorSelector selector = null, string ruleSet = null) {
 			if(selector != null && ruleSet != null) {
 				throw new InvalidOperationException("Cannot specify both an IValidatorSelector and a RuleSet.");
 			}

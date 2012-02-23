@@ -43,7 +43,7 @@ namespace FluentValidation {
 			set { cascadeMode = () => value; }
 		}
 
-		ValidationResult IValidator.Validate(object instance) {
+		IValidationResult IValidator.Validate(object instance) {
 			instance.Guard("Cannot pass null to Validate.");
 			if(! ((IValidator)this).CanValidateInstancesOfType(instance.GetType())) {
 				throw new InvalidOperationException(string.Format("Cannot validate instances of type '{0}'. This validator can only validate instances of type '{1}'.", instance.GetType().Name, typeof(T).Name));
@@ -52,7 +52,7 @@ namespace FluentValidation {
 			return Validate((T)instance);
 		}
 
-		ValidationResult IValidator.Validate(ValidationContext context) {
+		IValidationResult IValidator.Validate(ValidationContext context) {
 			context.Guard("Cannot pass null to Validate");
 
 			var newContext = new ValidationContext<T>((T)context.InstanceToValidate, context.PropertyChain, context.Selector) {
@@ -67,7 +67,7 @@ namespace FluentValidation {
 		/// </summary>
 		/// <param name="instance">The object to validate</param>
 		/// <returns>A ValidationResult object containing any validation failures</returns>
-		public virtual ValidationResult Validate(T instance) {
+		public virtual IValidationResult Validate(T instance) {
 			return Validate(new ValidationContext<T>(instance, new PropertyChain(), new DefaultValidatorSelector()));
 		}
 		
